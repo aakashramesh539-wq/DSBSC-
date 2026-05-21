@@ -49,13 +49,38 @@ Model Waveform
 
 Program
 
+Am=8.72;
+fm=931;
+Ac=13.9;
+fc=9310;
+fs=93100;
+eAM1=(Ac+em).*cos(2*3.14*fc*t);
+eAM2=(Ac-em).*cos(2*3.14*fc*t);
+t=0:1/fs:2/fm;
+em=Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,em);
+ec=Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,ec);
+eDSBSC=(eAM1-eAM2);
+subplot(3,1,3);
+plot(t,eDSBSC);
+
+
 Output Graph
+
+<img width="1919" height="1117" alt="image" src="https://github.com/user-attachments/assets/6064d243-0894-4732-9ad8-bef9183c53f3" />
+
 
 
 Tablular Column
 
+<img width="1280" height="772" alt="image" src="https://github.com/user-attachments/assets/c785a914-265b-41fa-a13b-1f5d0c86b38a" />
 
-Result
+
+
+Result:
 
 Thus the DSB-SC-AM Modulation and Demodulation is generated.
 
